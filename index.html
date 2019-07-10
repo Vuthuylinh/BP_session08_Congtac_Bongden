@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CongtacvaBongden</title>
+</head>
+<body>
+<script>
+    let SwitchButton = function (status, lamp) {
+        this.status = status;
+        this.lamp = lamp;
+        this.setStatus = function (status) {
+            if (this.status) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        this.connectToLamp = function (electricLamp) {
+            alert("Connect sucess");
+        };
+        this.switchOff = function (elictricLamp) {
+            alert("Elictric lamp is off");
+
+        };
+        this.switchOn = function (elictricLamp) {
+            alert("Elictric lamp is on");
+
+        }
+
+    };
+    let ElictricLamp = function (status) {
+        this.status = status;
+        this.turnOff = function (switchButton) {
+            switchButton.switchOff();
+
+        };
+        this.turnOn = function (switchButton) {
+            switchButton.switchOn();
+
+        }
+
+    };
+    let lamp1= new ElictricLamp(true);
+    let switchButton1 = new SwitchButton(true,lamp1);
+    switchButton1.switchOff(lamp1);
+
+
+</script>
+</body>
+</html>
